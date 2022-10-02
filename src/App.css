@@ -1,38 +1,129 @@
 .App {
   text-align: center;
+  min-height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2{
+  color: green;
+  margin-top: 20px;
+  font-size: 40px;
+  font-family: 'Courier New', Courier, monospace;
+  text-decoration: underline;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: lightblue;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Active and inactive button */
+.active-button{
+  background-color: #6D8B74;
+  color: aliceblue;
+  padding: 0.5rem 1.5rem;
+  border-radius: 10px;
+  border: 1px solid wheat;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.inactive-button{
+  background-color: lightgrey;
+  color: aliceblue;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid wheat;
+}
+
+/* Tooltip */
+.my-tooltip{
+  margin-top: 10rem;
+  position: relative;
+  display: inline-block;
+}
+
+.my-tooltip .tooltiptext{
+  
+  background-color: green;
+  color: whitesmoke;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 10px;
+  position: absolute;
+  z-index: 1;
+}
+
+/*  Position of tooltip */
+#top{
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+#top::after{
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -15px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: green transparent transparent transparent;
+}
+
+#left{
+  bottom: 30%;
+  left: 34%;
+  margin-left: -60px;
+}
+
+#left::after{
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 108%;
+  margin-left: -15px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent green;
+}
+
+#right{
+  bottom: 30%;
+  right: 34%;
+  margin-right: -60px;
+}
+#right::after{
+  content: "";
+  position: absolute;
+  top: 40%;
+  right: 100%;
+  margin-left: -15px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent green transparent transparent;
+}
+
+#bottom{
+  bottom: -120%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+#bottom::after{
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent  green transparent;
+}
+
+/* Hover text on which try to hovering */
+#hover_over_me{
+  color:indigo;
+  display: inline;
+  font-style: italic;
+  border-bottom: 1px dotted indigo;
 }
